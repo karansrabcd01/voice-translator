@@ -228,7 +228,7 @@ function speakText(text, language) {
 // ===================================
 async function translateText(text, sourceLang, targetLang) {
     try {
-        const response = await fetch('http://localhost:8000/translate', {
+        const response = await fetch('https://voice-translator-ghi7.onrender.com/translate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -340,8 +340,8 @@ function addToHistory(original, translated, sourceLang, targetLang, isReceived =
 // WebSocket Connection
 // ===================================
 function connectWebSocket() {
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsUrl = `${protocol}//${window.location.hostname}:8000/ws/${state.roomId}`;
+    // Always use the Render backend URL
+    const wsUrl = `wss://voice-translator-ghi7.onrender.com/ws/${state.roomId}`;
 
     try {
         state.ws = new WebSocket(wsUrl);
