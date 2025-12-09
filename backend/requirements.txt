@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+websockets
+python-multipart
+langchain
+langchain-core
+langchain-groq
+langgraph
+python-dotenv
+SpeechRecognition
+gTTS
+pydub
